@@ -1,0 +1,24 @@
+$imgPath:"../../assets/images";
+$fontPath:"../../assets/fonts";
+
+$fontOSX:'Hiragino Sans GB','Microsoft YaHei',微软雅黑,STHeiti,'WenQuanYi Micro Hei',Helvetica,Arial,sans-serif;
+$fontIOS:"HelveticaNeue-UltraLight","Helvetica Neue UltraLight";
+
+$googleFontExo2:"Exo 2";
+$googleFontDance:"Dancing Script";
+
+@import "variables";
+@import "reset-text";
+@import "popovers";
+
+@mixin word-wrap {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	}
+
+@mixin word-wrap-multi{
+	white-space: normal;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	}

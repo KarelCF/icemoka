@@ -1,0 +1,109 @@
+/* 载入iconfont字体 */
+@font-face {font-family: 'iconfont';
+    src: url(#{$fontPath}/iconfont.eot); /* IE9*/
+    src: url(#{$fontPath}/iconfont.eot?#iefix) format('embedded-opentype'), /* IE6-IE8 */
+    url(#{$fontPath}/iconfont.woff) format('woff'), /* chrome、firefox */
+    url(#{$fontPath}/iconfont.ttf) format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url(#{$fontPath}/iconfont.svg#uxiconfont) format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+    font-family:"iconfont" !important;
+    font-size:20px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    display: inline-block;
+    speak: none;
+    -webkit-transition: 0.3s;
+    -webkit-transition: -webkit-transform 0.4s ease-out;
+    transition: transform 0.4s ease-out;
+}
+
+.iconfont-reverse {
+    &:hover{
+        -webkit-transform: rotateZ(360deg);
+        transform: rotateZ(360deg);
+    }
+}
+
+.icon-weibo-reverse {
+    color:#888888;
+    &:hover{
+        opacity: 0.7;
+        color:#E6162D;
+    }
+}
+.icon-twitter-reverse {
+    color:#888888;
+    &:hover{
+        opacity: 0.7;
+        color:#2aa9e0;
+    }
+}
+.icon-facebook-reverse {
+    color:#888888;
+    &:hover{
+        opacity: 0.7;
+        color:#204385;
+    }
+}
+.icon-weixin-reverse {
+    color:#888888;
+    &:hover{
+        opacity: 0.7;
+        color:#75D140;
+    }
+}
+
+
+.icon-google{color:#176DEE}
+.icon-weibo{ color:#E6162D}
+.icon-twitter{color:#2aa9e0}
+.icon-douban{color:#279337}
+.icon-facebook{color:#204385}
+.icon-weixin{color:#75D140}
+.icon-github{color:#333333}
+.icon-bili{color:#1e1e1e}
+.icon-dribbble{color:#F72D84}
+.icon-shuai{color:#66ccff}
+
+.single-post-inner{
+    .icon-google:before{
+        content: "\00e600";
+    }
+    .icon-weibo:before{
+        content: "\00e601";
+    }
+    .icon-twitter:before{
+        content: "\00e602";
+    }
+    .icon-douban:before{
+        content: "\00e603";
+    }
+    .icon-facebook:before{
+        content: "\00e604";
+    }
+    .icon-weixin:before{
+        content: "\00e605";
+    }
+    .icon-github:before{
+        content: "\00e606";
+    }
+    .icon-bili:before{
+        content: "\00e607"
+    }
+    .icon-dribbble:before{
+        content: "\00e608"
+    }
+    .icon-shuai:before{
+        content: "\00e609"
+    }
+    
+
+}
+
+
+
+

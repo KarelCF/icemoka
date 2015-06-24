@@ -1,0 +1,22 @@
+{{!< default}}
+
+<header id="header" class="home-header blog-background banner-mask {{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}no-cover{{/if}}">
+    <div class="header-wrap">
+    <div class="home-info-container">
+        <h2>Such a beautiful thing</h2>
+        <h4>霞の诗篇</h4>
+    </div>
+    <div class="arrow_down">
+        <a href="javascript:;"></a>
+    </div>
+</header>
+
+{{! The main content area on the homepage }}
+<main id="main" class="content homepage" role="main">
+
+    {{! The tag below includes the post loop - partials/loop.hbs }}
+    {{> "loop"}}
+
+</main>
+
+

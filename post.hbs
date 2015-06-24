@@ -1,0 +1,99 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! Everything inside the #post tags pulls data from the post }}
+{{#post}}
+
+<header id="header" class="home-header blog-background banner-mask {{#if image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}">
+    <div class="nav-header">
+        <div class="nav-header-container">
+             <a href="{{@blog.url}}" class="back-home">Home</a>
+        </div>
+    </div>
+    <div class="header-wrap" >
+        <div class="post-info-container">
+            <h2 class="post-page-title ">
+                {{title}}
+            </h2>
+            <time class="post-page-time">{{date format="MMM DD YYYY"}}</time>
+            <span class="post-page-author">{{#author}}{{name}}{{/author}}</span>
+            <span class="post-page-tags">
+                {{tags prefix="" separator=" "}}
+            </span>
+        </div>
+    </div>
+    <div class="arrow_down">
+       <a href="javascript:;"></a>
+    </div>
+</header>
+
+<main class="content" id="main" role="main">
+    <article class="{{post_class}}">
+        <section class="post-content">
+            <div class="single-post-inner">
+               {{content}}
+            </div>
+        </section>
+
+        {{#author}}
+            <section class="author">
+                {{#if image}}
+                <figure class="author-image">
+                    <a class="img" href="javascript:;" style="background-image: url('{{image}}')"><span class="hide">{{name}}'s Picture</span></a>
+                </figure>
+                {{/if}}
+
+                <section class="author-detail">
+                    <h4><a href="javascript:;">{{name}}</a></h4>
+                {{#if bio}}
+                    <p>{{bio}}</p>
+                {{else}}
+                    <p><a href="{{url}}">阅读更多</a></p>
+                {{/if}}
+                    <div class="author-meta">
+                        {{#if location}}
+                            <span class="author-location icon-location">{{location}}</span>
+                        {{/if}}
+                        {{#if website}}
+                            <span class="author-link icon-link"><a href="{{website}}">{{website}}</a></span>
+                        {{/if}}
+                    </div>
+                </section>
+
+            </section>
+
+        {{/author}}
+
+        <section class="share">
+            <div class="share-icons" id="share-icons">
+               <a class="icon-share" href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&amp;pic={{image}}&amp;title={{encode title}}" onclick="window.open(this.href, 'weibo-share', 'width=550,height=235');return false;">
+                    <span class=""><i class="iconfont iconfont-reverse icon-weibo-reverse ">&#xe601;</i></span>
+                </a>
+                <a class="icon-share" href="javascript:;" data-toggle="popover" data-placement="bottom" data-trigger="focus" title="微信扫一扫">
+                    <span class=""><i class="iconfont iconfont-reverse icon-weixin-reverse">&#xe605;</i></span>
+                </a>
+                <a class="icon-share" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class=""><i class="iconfont iconfont-reverse icon-facebook-reverse">&#xe604;</i></span>
+                </a>
+                <a class="icon-share" href="http://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class=""><i class="iconfont iconfont-reverse icon-twitter-reverse">&#xe602;</i></span>
+                </a>
+            </div>
+        </section>
+        
+    </article>
+
+    <section class="post-comments">  
+        <div class="ds-thread" data-thread-key="{{slug}}" data-title="{{{title}}}" data-url="{{url absolute="true"}}"></div>
+    </section>  
+
+</main>
+
+<script>
+     var duoshuoQuery = {short_name:"icemoka"};
+</script>
+<script src="https://static.duoshuo.com/embed.js"></script>
+
+{{/post}}
