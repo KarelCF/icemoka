@@ -82,6 +82,25 @@
                 </a>
             </div>
         </section>
+
+        <aside class="read-next">
+             {{#next_post}}
+            <a class="read-next-story {{#if image}}" data-url="{{image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                <section class="post">
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt words="6"}}&hellip;</p>
+                </section>
+            </a>
+            {{/next_post}}                
+            {{#prev_post}}
+            <a class="read-next-story {{#if image}}" data-url="{{image}}" style="background-image: url({{image}}){{else}}no-cover{{/if}}" href="{{url}}">
+                <section class="post">
+                    <h2>{{title}}</h2>
+                    <p>{{excerpt words="6"}}&hellip;</p>
+                </section>
+            </a>
+            {{/prev_post}}
+        </aside>
         
     </article>
 
